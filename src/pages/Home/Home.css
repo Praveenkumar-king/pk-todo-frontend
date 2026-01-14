@@ -24,7 +24,6 @@
 
 .logo-area img {
   width: 40px;
-  height: auto;
 }
 
 .auth-buttons {
@@ -32,39 +31,10 @@
   gap: 12px;
 }
 
-/* 🔥 FIX APPLIED HERE */
 .btn-outline,
 .btn-filled {
-  text-decoration: none;   /* remove underline */
+  text-decoration: none;
   display: inline-block;
-}
-
-.btn-outline {
-  padding: 8px 20px;
-  border-radius: 25px;
-  border: 1.5px solid #4f46e5;
-  color: #4f46e5;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: #eef2ff;
-  text-decoration: none;
-}
-
-.btn-filled {
-  padding: 8px 22px;
-  border-radius: 25px;
-  background: #4f46e5;
-  color: white;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.btn-filled:hover {
-  background: #4338ca;
-  text-decoration: none;
 }
 
 /* ================= HERO ================= */
@@ -74,29 +44,13 @@
   padding: 90px 20px;
 }
 
-.tagline {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 25px;
-}
-
 .typing-text {
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.4;
-  color: #111;
-  min-height: 52px;
 }
 
 .cursor {
-  margin-left: 4px;
   color: #4f46e5;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
 }
 
 /* ================= FOOTER ================= */
@@ -113,7 +67,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 500;
 }
 
 .footer-left img {
@@ -122,16 +75,40 @@
 
 .footer-center {
   display: flex;
-  gap: 18px;
+  gap: 20px;
 }
 
+/* 🔥 MAGIC HERE */
 .footer-center a {
+  position: relative;
   color: #4f46e5;
   font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 4px;
 }
 
+/* line hidden initially */
+.footer-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #4f46e5;
+  transform: scaleX(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+/* line appears downwards on hover */
+.footer-center a:hover::after {
+  transform: scaleX(1);
+}
+
+/* optional color change */
 .footer-center a:hover {
-  text-decoration: none;
+  color: #4338ca;
 }
 
 .footer-right {
@@ -140,19 +117,6 @@
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .home-header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .home-hero {
-    padding: 60px 20px;
-  }
-
-  .typing-text {
-    font-size: 26px;
-  }
-
   .home-footer {
     flex-direction: column;
     gap: 10px;
