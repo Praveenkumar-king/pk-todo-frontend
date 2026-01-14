@@ -32,6 +32,13 @@
   gap: 12px;
 }
 
+/* 🔥 FIX APPLIED HERE */
+.btn-outline,
+.btn-filled {
+  text-decoration: none;   /* remove underline */
+  display: inline-block;
+}
+
 .btn-outline {
   padding: 8px 20px;
   border-radius: 25px;
@@ -43,6 +50,7 @@
 
 .btn-outline:hover {
   background: #eef2ff;
+  text-decoration: none;
 }
 
 .btn-filled {
@@ -56,6 +64,7 @@
 
 .btn-filled:hover {
   background: #4338ca;
+  text-decoration: none;
 }
 
 /* ================= HERO ================= */
@@ -76,10 +85,9 @@
   font-weight: 700;
   line-height: 1.4;
   color: #111;
-  min-height: 52px; /* prevents layout jump */
+  min-height: 52px;
 }
 
-/* Typing cursor */
 .cursor {
   margin-left: 4px;
   color: #4f46e5;
@@ -87,15 +95,8 @@
 }
 
 @keyframes blink {
-  0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-  25%,
-  75% {
-    opacity: 0;
-  }
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* ================= FOOTER ================= */

@@ -16,14 +16,12 @@ const Login = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
 
-    // Load Cloudflare Turnstile script
     const script = document.createElement("script");
     script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
 
-    // Callback for Turnstile success
     window.turnstileCallback = () => {
       setVerified(true);
     };
@@ -45,10 +43,7 @@ const Login = () => {
         password,
       });
 
-      // ✅ Save token
       localStorage.setItem("token", res.data.token);
-
-      // ✅ Go to todos page
       navigate("/todos");
     } catch (err) {
       setError("Invalid email or password");
@@ -82,7 +77,6 @@ const Login = () => {
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
 
-          {/* Cloudflare Turnstile */}
           <div
             className="cf-turnstile"
             data-sitekey="0x4AAAAAACLHHYYC4gt2pSVH"
@@ -97,6 +91,11 @@ const Login = () => {
             Login
           </button>
         </form>
+
+        {/* ✅ ADDED ONLY THIS */}
+        <p className="signup-text">
+          New user? <Link to="/signup">Sign up</Link>
+        </p>
 
         {error && <p className="error-text">{error}</p>}
       </div>

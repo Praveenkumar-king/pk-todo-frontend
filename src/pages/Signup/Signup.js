@@ -96,7 +96,7 @@ const Signup = () => {
             <label htmlFor="terms">
               Please accept the{" "}
               <a
-                href="https://yourdomain.com/terms"
+                href="https://pktodo-policies.netlify.app/terms-conditions"
                 target="_blank"
                 rel="noreferrer"
               >

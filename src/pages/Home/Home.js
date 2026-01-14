@@ -80,8 +80,23 @@ const Home = () => {
         </div>
 
         <div className="footer-center">
-          <a href="google.com" target="_blank" rel="noreferrer">Privacy</a>
-          <a href="google.com" target="_blank" rel="noreferrer">Terms & Conditions</a>
+          <a
+            href="https://pktodo-policies.netlify.app/privacy-policy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="https://pktodo-policies.netlify.app/terms-conditions"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terms & Conditions
+          </a>
+          <a href="https://pk-todo-app-contactus.netlify.app/" target="_blank" rel="noreferrer">
+            Contact Us
+          </a>
         </div>
 
         <div className="footer-right">
