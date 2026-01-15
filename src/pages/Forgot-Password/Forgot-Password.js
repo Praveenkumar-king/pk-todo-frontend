@@ -14,17 +14,18 @@ const ForgotPassword = () => {
 
     try {
       await axios.post(
-        "localhost:3000/api/auth/forgot-password",
+        "https://pk-todo-backend.onrender.com/api/auth/forgot-password",
         { email }
       );
 
       setMessage(
-        "If this email is registered, a reset link has been sent. Also Check Your Spam / Junk Folder."
+        "If this email is registered, a reset link has been sent. Please check your Inbox or Spam folder."
       );
       setEmail("");
     } catch (error) {
+      console.error(error);
       setMessage(
-        "Something went wrong. Please try again."
+        "Unable to send reset email. Please try again later."
       );
     } finally {
       setLoading(false);
