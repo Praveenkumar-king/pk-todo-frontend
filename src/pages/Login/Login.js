@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import API from "../../utils/api"; // ✅ API helper
+import API from "../../utils/api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -92,7 +92,7 @@ const Login = () => {
           </button>
         </form>
 
-        {/* ✅ ADDED ONLY THIS */}
+      
         <p className="signup-text">
           New user? <Link to="/signup">Sign up</Link>
         </p>

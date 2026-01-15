@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import API from "../../utils/api"; // ✅ API helper
+import API from "../../utils/api";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const Signup = () => {
         password,
       });
 
-      // ✅ Go to login after successful signup
+
       navigate("/login");
     } catch (err) {
       setError("User already exists or something went wrong");

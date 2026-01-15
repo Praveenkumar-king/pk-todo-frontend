@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
     try {
       await axios.post(
-        "https://pktodo-app.netlify.app/api/auth/forgot-password",
+        "localhost:5000/api/auth/forgot-password",
         { email }
       );
 
