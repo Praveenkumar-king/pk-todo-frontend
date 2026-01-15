@@ -13,21 +13,18 @@ const ForgotPassword = () => {
     setMessage("");
 
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/forgot-password`,
+      await axios.post(
+        "localhost:3000/api/auth/forgot-password",
         { email }
       );
 
       setMessage(
-        "If this email is registered, a reset link has been sent. Please check your Inbox and Spam/Junk folder."
+        "If this email is registered, a reset link has been sent. Also Check Your Spam / Junk Folder."
       );
       setEmail("");
     } catch (error) {
-      console.error(error.response?.data || error.message);
-
       setMessage(
-        error.response?.data?.message ||
-        "Something went wrong. Please try again later."
+        "Something went wrong. Please try again."
       );
     } finally {
       setLoading(false);
